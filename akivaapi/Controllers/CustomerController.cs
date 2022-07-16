@@ -20,37 +20,7 @@ namespace akivaapi.Controllers
             PooledConnectionLifetime = TimeSpan.FromMinutes(2)
         };
 
-        //public static handler = new HttpClientHandler(),
-        //handler.Credentials = new System.Net.NetworkCredential("admin@client", "admin");
-        //private static readonly HttpClient httpClient = new HttpClient(handler);
-
-
-        private static readonly string[] Summaries = new[]
-        {
-        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
  
-    };
-
-        private readonly ILogger<CustomerController> _logger;
-
-        public CustomerController(ILogger<CustomerController> logger)
-        {
-            _logger = logger;
-        }
-        /*
-        [HttpGet("GetWeatherForecast")]
-        public IEnumerable<akivaapi.CustomerController> GetWeather()
-        {
-            return Enumerable.Range(1, 5).Select(index => new CustomerController
-            {
-                Date = DateTime.Now.AddDays(index),
-                //TemperatureC = Random.Shared.Next(-20, 55),
-                TemperatureC = 22,
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
-        } 
-        */
 
         [HttpPost("CreateNewCustomer")]
         public Customer CreateNewCustomer(string CustomerType, Company CompanyData, Person PersonData, string Country,
